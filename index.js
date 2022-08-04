@@ -67,7 +67,9 @@ app.post('/counter/double', (req, res) => {
 
 app.put('/counter', (req, res) => {
 
-    counter = req.query.value
+    if(req.query.value) {
+        counter = req.query.value
+    }
 
     res.status(201).json({"counter": counter})
 })
